@@ -1,4 +1,4 @@
-ndex.<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
@@ -70,8 +70,22 @@ button {
   background: linear-gradient(to right,#3b82f6,#9333ea);
   color: white;
   cursor: pointer;
+  transition: 0.2s;
 }
 
+button:hover {
+  transform: scale(1.05);
+}
+
+/* ICON BUTTON */
+.icon-btn {
+  font-size: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* MODAL */
 .modal {
   display: none;
   position: fixed;
@@ -115,7 +129,7 @@ footer {
 
 <div class="grid" id="jobList"></div>
 
-<!-- Apply Modal -->
+<!-- MODAL -->
 <div class="modal" id="modal">
 <div class="modal-content">
 <h3>Apply for Job</h3>
@@ -137,8 +151,14 @@ footer {
 </label>
 </div>
 
-<button onclick="submitForm()">Submit</button>
-<button onclick="closeModal()" style="background:gray;margin-top:5px;">Cancel</button>
+<!-- SUBMIT ICON -->
+<button class="icon-btn" onclick="submitForm()">
+✔️
+</button>
+
+<button onclick="closeModal()" style="background:gray;margin-top:5px;">
+✖️
+</button>
 
 </div>
 </div>
@@ -194,7 +214,11 @@ jobList.innerHTML += `
 <div class="card-content">
 <h3>${job.title}</h3>
 <p>${job.company}</p>
-<button onclick="openModal()">Apply Now</button>
+
+<button class="icon-btn" onclick="openModal()">
+📩
+</button>
+
 </div>
 </div>
 `;
